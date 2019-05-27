@@ -57,5 +57,5 @@ def EditProfile(request):
 
         form = EditProfile()
 
-    return render(request,'review.html'{'form':form})
-                   
+    return render(request,'profile.html'{'form':form})
+

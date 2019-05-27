@@ -5,10 +5,12 @@ from django.contrib.auth.models import User
 # Create your models here.
 class Project(models.Model):
     title = models.CharField(max_length=30)
-    description = models.CharField(max_length=30)
+    description = models.TextField
     landing_page = models.ImageField(upload_to='landing_pages/',blank=True)
-
-
+    usability = models.IntegerField(default=0)
+    design = models.IntegerField(default=0)
+    content = models.IntegerField(default=0)
+    link = models.CharField(max_length=40,blank=True)
      
     def save_project(self):
         self.save()
@@ -17,7 +19,7 @@ class Project(models.Model):
         self.delete()
 
     def __str__(self):
-        return self.title       
+        return f'{self.title}'      
 
 
 

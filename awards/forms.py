@@ -1,7 +1,14 @@
 from django import forms
+from .models import Project,Profile
 
-class ProjectForm(forms.Form):
-    model = Profile
-    exclude = ['project']
+class ProjectForm(forms.ModelForm):
+    class Meta:
+        model = Project
+        exclude=[""]
+
+class VoteForm(forms.ModelForm):
+    class Meta:
+        model = Project
+        exclude=['title','description','landing_page']        
 
 

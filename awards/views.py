@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import Profile,Project
 from django.contrib.auth.decorators import login_required
-from .forms import ProjectForm
+from .forms import ProjectForm,VoteForm
 
 # Create your views here.
 def welcome(request):
@@ -32,14 +32,30 @@ def review(request):
     if request.method == 'POST':
         form = VoteForm(request.POST,request.FILES)
         if form.is_valid():
-        review = form.save(commit=False)
-        review.Project = logged_user
-        review.save()
+            review = form.save(commit=False)
+            review.Project = logged_user
+            review.save()
         return redirect('welcome')
 
     else:
         form =  VoteForm()
 
     return render(request,'review.html',{'form':form})
-             
-    
+
+@login_required(login_url='/accounts/login/')
+def EditProfile(request):
+    logged_user = request.user
+    if request.method == 'POST':
+        form = EditProfile(request.POST,request.FILES)
+        if form.is_valid():
+            EditProfile = form.save(commit=False)
+            EditProfile.Profile = logged_user
+            EditProfile.save()
+        return redirect('welcome')
+
+    else:
+
+        form = EditProfile()
+
+    return render(request,'review.html'{'form':form})
+                   

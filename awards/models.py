@@ -23,10 +23,6 @@ class Project(models.Model):
         return f'{self.title}'      
 
 
-
-
-
-
 class Profile(models.Model):
     profile_picture = models.ImageField(upload_to = 'images/',blank=True)
     bio = models.CharField(max_length = 70)
@@ -47,3 +43,5 @@ class Profile(models.Model):
 
     def __str__(self):
         return f'{self.bio}'      
+
+

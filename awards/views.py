@@ -2,6 +2,10 @@ from django.shortcuts import render,redirect
 from .models import Profile,Project
 from django.contrib.auth.decorators import login_required
 from .forms import ProjectForm,VoteForm,EditProfile
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .serializer import ProjectSerializer,ProfileSerializer
+
 
 # Create your views here.
 def welcome(request):
@@ -60,3 +64,17 @@ def edit_profile(request):
 
     return render(request,'profile.html',{'form':form})
 
+
+class project_list(APIView):
+    def get(self, request, format=None):
+        project = Project.objects.all()
+        serializer = ProjectSerializer(project, many=True)
+        return Response(serializer.data)
+
+
+class profile_list(APIView):
+    def get(self, request, format=None):
+        profile = Profile.objects.all()
+        serializer = ProfileSerializer(project, many=True)
+        return Response(serializer.data)
+        

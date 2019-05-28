@@ -15,5 +15,5 @@ class VoteForm(forms.ModelForm):
 class EditProfile(forms.ModelForm):
     class Meta:
         model = Profile
-        exclude=['project']
+        exclude=['project','user']
 

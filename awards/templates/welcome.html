@@ -4,6 +4,12 @@
 
 <h1> Welcome to Awwards</h1>
 
+{% for profile in prof %}
+<b>Bio:<p></b>{{profile.bio}}</p>
+<b>Contact:<p></b>{{profile.contact}}</p>
+<img src="{{profile.profile_picture.url}}">
+
+{% endfor %}
 
 {% for project in projects %}
 <p>{{project.title}}</p>
@@ -11,6 +17,7 @@
 
 <img src="{{project.landing_page.url}}">
 <a href="{%url 'VoteForm' %}">Review</a>
+
 {% endfor %}
 
 

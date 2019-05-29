@@ -8,10 +8,10 @@
 
 | Input                                                 | Output                                                                      |
 |-------------------------------------------------------|-----------------------------------------------------------------------------|
-| When you land on the page                             | You will have to first register then login                                  |
-| at the navbar there is an icon for creating a profile | create your own profile and post it                                         |
-| there is a button for updloading images               | you can upload any image you want to                                        |
-| when you upload an image                              | you can like and comment on it and the comments appear on the comments page |
+| When you land on the page                             | You will have to first sign up then login                                  |
+| at the navbar there is an icon for creating a profile | create your own profile and post it and can view it in the view profile                                        |
+| there is a button for updloading uploading               | you can upload any project you want to                                        |
+| when you upload an the project,there is a review and project link button                             | you can review and rate the project according to its usability,content and design,you can also get to see the the project in the project link there   |
 
 
 

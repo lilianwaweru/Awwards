@@ -12,6 +12,7 @@ urlpatterns=[
     url(r'^project/$',views.ProjectsUpload,name = 'ProjectForm'),
     url(r'^review/$',views.review, name = 'VoteForm'),
     url(r'^profile/$',views.edit_profile, name = 'EditProfile'),
+    url(r'^search/', views.search, name='search_title'),
     url(r'^api/profile/$', views.profile_list.as_view()),
     url(r'^api/projects/$', views.project_list.as_view()),
     url(r'^api-token-auth/',obtain_auth_token)

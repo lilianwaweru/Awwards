@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'awards.apps.AwardsConfig',
     'bootstrap3',
     'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [

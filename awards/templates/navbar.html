@@ -10,7 +10,26 @@
       
         <a href="{%url 'ProjectForm' %}">Upload Project</a>
         <a href="{% url 'EditProfile' %}">Upload Profile</a>
-       
+        
+        <!-- <ul>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">APIs
+                      <span class="caret"></span>
+                  </a>
+            <ul class="dropdown-menu" role="menu">
+              <li>
+                <a href="/api/profile">project API</a>
+              </li>
+              <li>
+                <a href="/api/projects">Profile API</a>
+              </li>
+                <a href="/logout">Logout</a>
+              </li>
+            </ul>
+          </li>
+        </ul> -->
+        <a class="nav-link" href="/api/profile">Profile API</a>
+        <a class="nav-link" href="/api/projects">project API</a>
              
                   <a class="nav-link" href="/accounts/login/">Login</a>
                 

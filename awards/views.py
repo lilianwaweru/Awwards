@@ -89,7 +89,7 @@ def search(request):
 
     else:
         message = "You haven't searched for any term"
-        return render(request, 'search.html',{"message":searched_title})    
+        return render(request, 'search.html',{"message":searched_title  })    
 
 
 

@@ -4,21 +4,65 @@
 
 <h1> Welcome to Awwards</h1>
 
-{% for profile in prof %}
-<b>Bio:<p></b>{{profile.bio}}</p>
-<b>Contact:<p></b>{{profile.contact}}</p>
-<img src="{{profile.profile_picture.url}}">
 
-{% endfor %}
 
-{% for project in projects %}
+<!-- {% for project in projects %}
 <p>{{project.title}}</p>
 <p>{{project.description}}</p>
 
 <img src="{{project.landing_page.url}}">
 <a href="{%url 'VoteForm' %}">Review</a>
+{% endfor %} -->
+<div class="container-fluid">
+    <!-- <div class="row">
+        <div class="col-md-4">
+            {% for project in projects %}
+            <div class="card" style="width: 18rem;">
+                <h5 class="card-title">{{project.title}}</h5>
+                <img class="card-img-top" src="{{project.landing_page.url}}" alt="Pic Loading">
 
-{% endfor %}
+                <div class="card-body">
+                    <p class="card-text">{{project.description}}</p>
+                    <a href="{%url 'VoteForm' %}">Review</a>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div> -->
+    <div class="row">
+            {% for project in projects %}
+
+        <div class="col-md-4 main-page d-flex" style=" margin-top: 5px;">
+            <div class="card card-cascade wider flex-fill ">
+                <h4 class="card-title">{{project.title}}</h4>
+                <!-- Card image -->
+                <div class="view view-cascade overlay">
+                <img class="card-img-top"
+                            src="{{project.landing_page.url}}" alt="Img">
+                </div>
+                <!--Card content-->
+                <div class="card-body">
+
+                    <!--Title-->
+                    <p class="card-text">{{project.description}}</p>
+                    <!--Text-->
+                    
+                    <b>Description:<p></b>{{project.description}}</p>
+                    <a href="{{project.link}}">ProjectLink</a>
+                    <a href="{%url 'VoteForm' %}" class="float-right">Review</a>
+                </div>
+            </div>
+        </div>
+        
 
 
-{% endblock%}
+        {% empty %}
+        <div class="row">
+            <h1 class="text-center"> No Images Yet</h1>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

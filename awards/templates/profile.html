@@ -9,6 +9,12 @@
   <link rel="stylesheet" href="{% static 'css/baseinsta.css' %}"> {% endblock %}
 </head>
 <body>
+    {% for profile in prof %}
+    <b>Bio:<p></b>{{profile.bio}}</p>
+    <b>Contact:<p></b>{{profile.contact}}</p>
+    <img src="{{profile.profile_picture.url}}">
+    
+    {% endfor %}
     <form  action="{%url 'EditProfile'%}" method="post" enctype="multipart/form-data">
         {%csrf_token%}
     

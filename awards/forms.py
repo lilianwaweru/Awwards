@@ -4,7 +4,7 @@ from .models import Project,Profile
 class ProjectForm(forms.ModelForm):
     class Meta:
         model = Project
-        exclude=['usability','design','content']
+        exclude=['usability','design','content','project_user']
 
 class VoteForm(forms.ModelForm):
     class Meta:

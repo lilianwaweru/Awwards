@@ -1,0 +1,49 @@
+{% load bootstrap3 %} {% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% block styles %} {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/baseawards.css' %}"> {% endblock %}
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img id="profile" height="250px" width="250px" src="{{profile.profile_picture.url}}"
+                    style="border-radius:150px;">
+                <!-- <b>Bio:<p></b>{{profile.bio}}</p>
+        <b>Contact:<p></b>{{profile.contact}}</p> -->
+    </div>
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <ul class="list-group list-group-flush">
+                            <b>Bio</b>
+                            <li class="list-group-item">{{profile.bio}}</li>
+                            <b>Contact</b>
+                            <li class="list-group-item">{{profile.contact}}</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+
+                {% for project in projects %}
+
+                <img src="{{project.landing_page.url}}" alt="IMG">
+
+
+                {% endfor %}
+            
+    </div>
+
+    {% block scripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {% bootstrap_javascript %} {% endblock %}
+
+</body>
+
+</html>

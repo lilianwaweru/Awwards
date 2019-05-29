@@ -6,15 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 {% block styles %} {% bootstrap_css %}
-  <link rel="stylesheet" href="{% static 'css/baseinsta.css' %}"> {% endblock %}
+  <link rel="stylesheet" href="{% static 'css/baseawards.css' %}"> {% endblock %}
 </head>
 <body>
-    {% for profile in prof %}
-    <b>Bio:<p></b>{{profile.bio}}</p>
-    <b>Contact:<p></b>{{profile.contact}}</p>
-    <img src="{{profile.profile_picture.url}}">
     
-    {% endfor %}
     <form  action="{%url 'EditProfile'%}" method="post" enctype="multipart/form-data">
         {%csrf_token%}
     

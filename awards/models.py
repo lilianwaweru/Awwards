@@ -11,7 +11,7 @@ class Project(models.Model):
     design = models.IntegerField(default=0)
     content = models.IntegerField(default=0)
     link = models.CharField(max_length=40,blank=True)
-    
+    project_user = models.ForeignKey(User,on_delete=models.CASCADE,null=True)
 
     def save_project(self):
         self.save()

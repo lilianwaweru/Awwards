@@ -8,6 +8,7 @@ from rest_framework.authtoken.views import obtain_auth_token
 urlpatterns=[
     url('^$',views.welcome,name = 'welcome'),
     url(r'posts/$',views.welcome,name = 'welcome'),
+    url(r'^viewprofile/$',views.view_profile,name ='view_profile'),
     url(r'^project/$',views.ProjectsUpload,name = 'ProjectForm'),
     url(r'^review/$',views.review, name = 'VoteForm'),
     url(r'^profile/$',views.edit_profile, name = 'EditProfile'),

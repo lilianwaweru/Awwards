@@ -2,34 +2,18 @@
 ​
 {% block content %}
 
-<h1> Welcome to Awwards</h1>
 
-
-
-<!-- {% for project in projects %}
-<p>{{project.title}}</p>
-<p>{{project.description}}</p>
-
-<img src="{{project.landing_page.url}}">
-<a href="{%url 'VoteForm' %}">Review</a>
-{% endfor %} -->
-<div class="container-fluid">
-    <!-- <div class="row">
-        <div class="col-md-4">
-            {% for project in projects %}
-            <div class="card" style="width: 18rem;">
-                <h5 class="card-title">{{project.title}}</h5>
-                <img class="card-img-top" src="{{project.landing_page.url}}" alt="Pic Loading">
-
-                <div class="card-body">
-                    <p class="card-text">{{project.description}}</p>
-                    <a href="{%url 'VoteForm' %}">Review</a>
-                </div>
-            </div>
+<div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">WELCOME TO Awwards</h1>
+          
         </div>
+      </div>
 
-        {% endfor %}
-    </div> -->
+
+
+<div class="container-fluid">
+   
     <div class="row">
             {% for project in projects %}
 
@@ -45,12 +29,12 @@
                 <div class="card-body">
 
                     <!--Title-->
-                    <p class="card-text">{{project.description}}</p>
+                   
                     <!--Text-->
                     
                     <b>Description:<p></b>{{project.description}}</p>
-                    <a href="{{project.link}}">ProjectLink</a>
-                    <a href="{%url 'VoteForm' %}" class="float-right">Review</a>
+                    <a class="btn btn-outline-dark" href="{{project.link}}">ProjectLink</a>
+                    <a class="btn btn-outline-dark" href="{%url 'VoteForm' %}" class="float-right">Review</a>
                 </div>
             </div>
         </div>

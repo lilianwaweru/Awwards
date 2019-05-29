@@ -1,42 +1,53 @@
 
-<nav class="navbar navbar-light bg-light">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a><i class="fab fa-awards"></i></a>
-        <a class="navbar-brand" href="{% url 'welcome' %}">Awwards</a>
-      </div>
-      
-      <div class="col-sm-4 col-md-4 navbar-center">
-      
-        <a href="{%url 'ProjectForm' %}">Upload Project</a>
-        <a href="{% url 'EditProfile' %}">Upload Profile</a>
-        <a href="{% url 'view_profile' %}">View Profile</a>
-        <!-- Adding a search form  -->
+
+<nav class="navbar navbar-expand" style=background-color:black;> 
+  <a class="navbar-brand" style="color:white" href="{% url 'welcome' %}">Awwards</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <a class="navbar-brand" style="color:white" href="{%url 'ProjectForm' %}">Project</a>
+      <a class="navbar-brand" style="color:white" href="{% url 'EditProfile' %}">Profile</a>
+      <a class="navbar-brand" style="color:white" href="{% url 'view_profile' %}">View Profile</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" style="color:white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          APIs
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="nav-link" style="color:white" href="/api/profile">Profile API</a>
+          <a class="nav-link" style="color:white" href="/api/projects">project API</a>
+
+        </div>
+      </li>
+
       <div class="col-sm-4 col-md-4 navbar-center">
 
-          <form class="navbar-form" role="search" action="{% url 'search_title' %}">
-  
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search" name="title">
-              <div class="input-group-btn">
-                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-              </div>
+        <form class="navbar-form" role="search" action="{% url 'search_title' %}">
+
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" name="title">
+            <div class="input-group-btn">
+              <button class="btn btn-outline-primary" style="color:white" type="submit"><i
+                  class="glyphicon glyphicon-search">search</i></button>
             </div>
+          </div>
+
+        </form>
+      </div>
+      <!-- search form end -->
+
+    
   
-          </form>
-        </div>
-        <!-- search form end -->
-        <a class="nav-link" href="/api/profile">Profile API</a>
-        <a class="nav-link" href="/api/projects">project API</a>
-             
-                  <a class="nav-link" href="/accounts/login/">Login</a>
-                
-                  <a class="nav-link" href="/accounts/register/">Sign Up</a>
-                
-         
-        </div>
-        
-        
-    </div>
-  </nav>
-  
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+        <a  class="nav-link" style="color:white" href="/accounts/login/">Login</a>
+
+        <a class="nav-link" style="color:white" href="/accounts/register/">Sign Up</a>
+      </form>
+
+  </div>
+</nav>

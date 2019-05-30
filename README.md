@@ -1,5 +1,5 @@
 # AWWARDS
-
+This is a project that allows you to post your project that you have created and can get reviewed.
 
 ## Author
 [Lilian Muthoni Waweru](https://github.com/lilianwaweru)

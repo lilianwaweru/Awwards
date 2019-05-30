@@ -10,8 +10,8 @@ from .serializer import ProjectSerializer,ProfileSerializer
 # Create your views here.
 def welcome(request):
     projects = Project.objects.all()
-    prof = Profile.objects.filter(user=request.user)
-    return render(request,'welcome.html',{"projects":projects,"prof":prof})
+    # prof = Profile.objects.filter(user=request.user)
+    return render(request,'welcome.html',{"projects":projects})
 
 
 @login_required(login_url='/accounts/login/')
@@ -28,7 +28,7 @@ def ProjectsUpload(request):
     else:
          form = ProjectForm()
 
-    return render(request,'project.html',{'form':form})           
+    return render(request,'project.html',{'form':form})
 
 
 @login_required(login_url='/accounts/login/')
@@ -61,7 +61,7 @@ def edit_profile(request):
         return redirect('welcome')
 
     else:
-        
+
         form = EditProfile()
 
     return render(request,'profile.html',{'form':form})
@@ -72,7 +72,7 @@ def view_profile(request):
     current_user = request.user
     projects = Project.objects.filter(project_user = current_user)
 
-    try:   
+    try:
         prof = Profile.objects.get(user=current_user)
     except Exception as e:
         return redirect('EditProfile')
@@ -89,7 +89,7 @@ def search(request):
 
     else:
         message = "You haven't searched for any term"
-        return render(request, 'search.html',{"message":searched_title  })    
+        return render(request, 'search.html',{"message":searched_title  })
 
 
 
@@ -105,4 +105,3 @@ class profile_list(APIView):
         profile = Profile.objects.all()
         serializer = ProfileSerializer(profile, many=True)
         return Response(serializer.data)
-        
